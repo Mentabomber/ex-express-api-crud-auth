@@ -30,6 +30,9 @@ async function register(req, res) {
     expiresIn: "1h",
   });
 
+
+  delete user.password;
+  
   res.json({ user, token });
 }
 
