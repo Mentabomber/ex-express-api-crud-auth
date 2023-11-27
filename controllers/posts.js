@@ -21,6 +21,11 @@ async function store(req, res){
                 id: creationData.categoryId
             }
         },
+        user: {
+            connect: {
+                id: creationData.userId
+            }
+        },
         tags:{
             connect: creationData.tags.map((idTag) => ({
             id: idTag,
@@ -52,6 +57,7 @@ async function show(req, res){
                 },
             },
             category: true,
+            user: true,
         }
 
     });
@@ -76,6 +82,7 @@ async function showAll(req, res){
                     },
                 },
                 category: true,
+                user: true,
             }
         })
         
@@ -94,6 +101,7 @@ async function showAll(req, res){
                     },
                 },
                 category: true,
+                user: true,
             }
             
         })
@@ -113,6 +121,7 @@ async function showAll(req, res){
                     },
                 },
                 category: true,
+                user: true,
             }
             
         })
